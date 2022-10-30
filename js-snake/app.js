@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     let direction = 1
     let score = 0
     let speed = 0.9
-    let intervslTime = 0
+    let intervalTime = 0
     let interval = 0
 
     function startGAme() {
@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () =>{
         score = 0
         direction = 1
         scoreDisplay.innerText = score
-        intervslTime = 1000
+        intervalTime = 1000
         currentSnake = [2, 1, 0]
         currentIndex = 0
         currentSnake.forEach((index => squares[index].classList.add('snake')))
-        interval = setInterval(moveOutcomes, intervslTime)
+        interval = setInterval(moveOutcomes, intervalTime)
     }
 
     function moveOutcomes() {
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             score++
             scoreDisplay.textContent = score
             clearInterval(interval)
-            intervslTime = intervslTime * speed
-            interval = setInterval(moveOutcomes, intervslTime)
+            intervalTime = intervalTime * speed
+            interval = setInterval(moveOutcomes, intervalTime)
         }
         squares[currentSnake[0]].classList.add('snake')
     }
